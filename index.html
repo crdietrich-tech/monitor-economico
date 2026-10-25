@@ -66,17 +66,25 @@ h2{font-family:var(--f-display);font-weight:650;font-size:21px;margin:0;color:va
 .mirada .md{font-size:11px;color:var(--muted);font-style:italic}
 .mirada p{margin:0;font-size:14px;line-height:1.55;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
 .legal{margin-top:10px;font-size:11.5px;line-height:1.5;color:var(--muted);max-width:110ch}
-/* Perspectiva D&D */
-.persp{margin:28px 0 8px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:8px;padding:22px 26px}
+/* Perspectiva D&D · columna lateral */
+.cols{display:block}
+.side-col{margin:32px 0 8px}
+.persp{border-top:3px solid var(--navy);padding:14px 0 0}
 .persp .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold)}
-.persp h2{font-size:clamp(22px,3vw,28px);margin:6px 0 6px;text-wrap:balance}
-.persp .bajada{font-family:var(--f-display);font-style:italic;font-size:17px;color:var(--muted);margin:0 0 14px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
-.persp p{margin:0 0 12px;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
-.persp ol{margin:0 0 12px;padding-left:22px;display:flex;flex-direction:column;gap:6px}
-.persp .firma{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;line-height:1.4}
+.persp h2{font-family:var(--f-display);font-size:24px;line-height:1.15;margin:8px 0 8px;text-wrap:balance}
+.persp .bajada{font-family:var(--f-display);font-style:italic;font-size:16px;line-height:1.45;color:var(--muted);margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--line);text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.persp p,.persp li{font-size:15px;line-height:1.55}
+.persp p{margin:0 0 11px;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+.persp ol{margin:0 0 11px;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.persp .firma{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:1.4;color:var(--muted)}
 .persp .firma strong{display:block;font-family:var(--f-display);font-size:16px;color:var(--navy)}
-.persp .md{font-size:11px;color:var(--muted);font-style:italic;margin:10px 0 0}
-@media (max-width:600px){.persp{padding:18px 16px}}
+.persp .md{font-size:11px;color:var(--muted);font-style:italic;margin:10px 0 0;text-align:left}
+@media (min-width:1040px){
+  .wrap{max-width:1280px}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0 36px;align-items:start}
+  .side-col{margin:0;padding-left:28px;border-left:1px solid var(--line);align-self:stretch}
+  .persp{margin-top:6px}
+}
 /* Tasas */
 .rates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:16px;margin-top:6px}
 @media (max-width:820px){.rates{grid-template-columns:minmax(0,1fr)}}
@@ -145,26 +153,10 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
 <p class="headline">Brasil elige hoy presidente en un empate técnico y el resultado marcará la apertura del lunes, en una semana con reunión de la Fed y el riesgo país en su máximo del año (707 pb). En casa crece el debate por el estancamiento: la inversión cayó a su nivel más bajo en dos décadas, mientras YPF anticipa ganancias récord.</p>
 <p class="note">Edición de domingo: los indicadores de mercado corresponden al cierre del viernes 23/10, último día hábil. Las variaciones se calculan contra el jueves 22/10. Las cotizaciones no se mueven hasta la apertura del lunes 26/10.</p>
 
-<section class="persp" id="perspectiva" lang="es">
-  <div class="eyebrow">Perspectiva D&amp;D · Semana del 26 de octubre</div>
-  <h2>Primero el diagnóstico, después el crédito</h2>
-  <p class="bajada">Con el crédito caro y la actividad en baja, la decisión financiera más importante de una PyME no es dónde conseguir plata, sino saber para qué la necesita.</p>
-  <p>Cada semana recibimos consultas de empresarios que llegan con el mismo pedido: "necesito financiamiento". Y casi siempre la primera pregunta que les hago es otra: ¿para qué?</p>
-  <p>Hoy el contexto obliga a responder esa pregunta con precisión. El riesgo país está en su nivel más alto del año, las tasas siguen altas en términos reales y los bancos prestan con cautela porque la morosidad viene creciendo. En ese escenario, endeudarse sin un diagnóstico previo es la forma más rápida de convertir un problema de caja en un problema de solvencia.</p>
-  <p>En D&amp;D trabajamos con lo que llamamos el diagnóstico financiero de primera hora: una revisión rápida, de pocos días, que permite separar los síntomas de las causas. La falta de caja casi nunca es el problema, sino la consecuencia. Detrás suele haber plazos de cobro que se estiraron, stock inmovilizado, márgenes que se erosionaron sin que nadie los midiera o deudas de corto plazo financiando inversiones de largo plazo.</p>
-  <p>Ese diagnóstico se apoya en tres preguntas simples:</p>
-  <ol>
-    <li>¿Cuántos días tarda la empresa en convertir una venta en dinero, y cómo cambió ese número en el último año?</li>
-    <li>¿Qué productos, servicios o clientes ganan plata de verdad, una vez descontados todos sus costos?</li>
-    <li>¿La deuda coincide en plazo y en moneda con los ingresos que la van a pagar?</li>
-  </ol>
-  <p>Cuando esas respuestas están claras, la conversación con el banco o la SGR cambia por completo. Ya no se pide "plata para capital de trabajo": se presenta un plan con números, plazos y garantías, y eso se traduce en mejores condiciones y más chances de aprobación.</p>
-  <p>La otra cara es igual de importante: a veces el diagnóstico muestra que la empresa no necesita más deuda, sino ordenar la que ya tiene. Renegociar plazos con proveedores, acelerar cobranzas o liberar stock puede generar más caja que un préstamo, y sin costo financiero.</p>
-  <p>En un contexto de incertidumbre como el que atraviesa la Argentina, la ventaja no la tiene quien consigue crédito primero, sino quien sabe exactamente qué hacer con él.</p>
-  <div class="firma"><strong>Cr. Alberto Dietrich</strong>Socio fundador, D&amp;D Group Consultores</div>
-  <p class="md">Opinión del autor, de carácter general. No constituye asesoramiento ni recomendación de inversión o de acción. Ver aviso legal al pie.</p>
-</section>
 
+
+<div class="cols">
+<div class="main-col">
 <!-- TABLERO -->
 <div class="sec-head"><h2>Tablero de indicadores</h2><span class="tag">Cierre 23/10</span></div>
 <div class="legend"><span style="--c:var(--up)">Subió</span><span style="--c:var(--down)">Bajó</span><span style="--c:var(--flat)">Sin cambios o sin comparación</span></div>
@@ -323,6 +315,30 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
   <p style="margin:0 0 8px;max-width:65ch">En D&amp;D Group analizamos el efecto de estas variables en tus números: financiamiento, tasas, costos y proyecciones. Escribinos y coordinamos una reunión.</p>
   <p style="margin:0;font-family:var(--f-num);font-size:17px;font-weight:600;user-select:all">crdietrich@dydgroupconsultores.com</p>
 </section>
+
+</div>
+<aside class="side-col">
+<section class="persp" id="perspectiva" lang="es">
+  <div class="eyebrow">Perspectiva D&amp;D · Semana del 26 de octubre</div>
+  <h2>Primero el diagnóstico, después el crédito</h2>
+  <p class="bajada">Con el crédito caro y la actividad en baja, la decisión financiera más importante de una PyME no es dónde conseguir plata, sino saber para qué la necesita.</p>
+  <p>Cada semana recibimos consultas de empresarios que llegan con el mismo pedido: "necesito financiamiento". Y casi siempre la primera pregunta que les hago es otra: ¿para qué?</p>
+  <p>Hoy el contexto obliga a responder esa pregunta con precisión. El riesgo país está en su nivel más alto del año, las tasas siguen altas en términos reales y los bancos prestan con cautela porque la morosidad viene creciendo. En ese escenario, endeudarse sin un diagnóstico previo es la forma más rápida de convertir un problema de caja en un problema de solvencia.</p>
+  <p>En D&amp;D trabajamos con lo que llamamos el diagnóstico financiero de primera hora: una revisión rápida, de pocos días, que permite separar los síntomas de las causas. La falta de caja casi nunca es el problema, sino la consecuencia. Detrás suele haber plazos de cobro que se estiraron, stock inmovilizado, márgenes que se erosionaron sin que nadie los midiera o deudas de corto plazo financiando inversiones de largo plazo.</p>
+  <p>Ese diagnóstico se apoya en tres preguntas simples:</p>
+  <ol>
+    <li>¿Cuántos días tarda la empresa en convertir una venta en dinero, y cómo cambió ese número en el último año?</li>
+    <li>¿Qué productos, servicios o clientes ganan plata de verdad, una vez descontados todos sus costos?</li>
+    <li>¿La deuda coincide en plazo y en moneda con los ingresos que la van a pagar?</li>
+  </ol>
+  <p>Cuando esas respuestas están claras, la conversación con el banco o la SGR cambia por completo. Ya no se pide "plata para capital de trabajo": se presenta un plan con números, plazos y garantías, y eso se traduce en mejores condiciones y más chances de aprobación.</p>
+  <p>La otra cara es igual de importante: a veces el diagnóstico muestra que la empresa no necesita más deuda, sino ordenar la que ya tiene. Renegociar plazos con proveedores, acelerar cobranzas o liberar stock puede generar más caja que un préstamo, y sin costo financiero.</p>
+  <p>En un contexto de incertidumbre como el que atraviesa la Argentina, la ventaja no la tiene quien consigue crédito primero, sino quien sabe exactamente qué hacer con él.</p>
+  <div class="firma"><strong>Cr. Alberto Dietrich</strong>Socio fundador, D&amp;D Group Consultores</div>
+  <p class="md">Opinión del autor, de carácter general. No constituye asesoramiento ni recomendación de inversión o de acción. Ver aviso legal al pie.</p>
+</section>
+</aside>
+</div>
 
 <!-- ARCHIVO -->
 <div class="sec-head"><h2>Ediciones anteriores</h2><span class="tag">Últimos 7 días</span></div>
