@@ -67,8 +67,8 @@ h2{font-family:var(--f-display);font-weight:650;font-size:21px;margin:0;color:va
 .mirada p{margin:0;font-size:14px;line-height:1.55;max-width:none;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
 .legal{margin-top:10px;font-size:11.5px;line-height:1.5;color:var(--muted);max-width:110ch}
 /* Perspectiva D&D · columna lateral */
-.cols{display:block}
-.side-col{margin:32px 0 8px}
+.cols{display:flex;flex-direction:column}
+.side-col{order:-1;margin:24px 0 8px}
 .persp{border-top:3px solid var(--navy);padding:14px 0 0}
 .persp .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold)}
 .persp h2{font-family:var(--f-display);font-size:24px;line-height:1.15;margin:8px 0 8px;text-wrap:balance}
@@ -82,7 +82,7 @@ h2{font-family:var(--f-display);font-weight:650;font-size:21px;margin:0;color:va
 @media (min-width:1040px){
   .wrap{max-width:1280px}
   .cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0 36px;align-items:start}
-  .side-col{margin:0;padding-left:28px;border-left:1px solid var(--line);align-self:stretch}
+  .side-col{order:0;margin:0;padding-left:28px;border-left:1px solid var(--line);align-self:stretch}
   .persp{margin-top:6px}
 }
 /* Tasas */
