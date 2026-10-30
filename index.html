@@ -127,15 +127,20 @@ tr:last-child td{border-bottom:0}
 .rsum span{font-size:12.5px;color:var(--muted)}
 .rates2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px}
 @media (max-width:900px){.rates2{grid-template-columns:minmax(0,1fr)}}
-.pf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.pf{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"b t" "p m";gap:2px 10px;padding:9px 0 9px 10px;border-bottom:1px solid var(--line);border-left:3px solid var(--down)}
-.pf.gana{border-left-color:var(--up)}
-.pf:last-child{border-bottom:0}
-.pf-b{grid-area:b;font-weight:600;font-size:14.5px}
-.pf-t{grid-area:t;font-family:var(--f-num);font-size:20px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
-.pf-m{grid-area:m;font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
-.pf-p{grid-area:p;font-size:12px;font-weight:600;color:var(--down)}
+.pf-list{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:13px}
+.pf{display:flex;flex-direction:column;gap:5px}
+.pf-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.pf-b{font-weight:600;font-size:14.5px}
+.pf-g{font-family:var(--f-num);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--down)}
+.pf.gana .pf-g{color:var(--up)}
+.pf-bar{position:relative;height:10px;background:var(--line);border-radius:99px}
+.pf-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--down);opacity:.85}
+.pf.gana .pf-bar i{background:var(--up)}
+.pf-bar::after{content:"";position:absolute;top:-4px;bottom:-4px;left:var(--infl);width:2px;background:var(--ink);border-radius:1px}
+.pf-bot{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
+.pf-p{font-weight:600;color:var(--down)}
 .pf.gana .pf-p{color:var(--up)}
+.hint b{color:var(--ink)}
 .refs2{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.6}
 .refs2 b{color:var(--ink);font-family:var(--f-num);font-weight:600}
 .bcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
@@ -241,25 +246,25 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
 <!-- TASAS -->
 <div class="sec-head"><h2>Tasas de interés</h2><span class="tag">TNA · octubre 2026</span></div>
 <div class="rsum">
-  <div><small>Plazo fijo a 30 días</small><b>16% – 24%</b><span>Para no perder contra la inflación hace falta 22,8%</span></div>
+  <div><small>Plazo fijo a 30 días</small><b>16% – 24%</b><span>Para no perder contra la inflación hace falta 23,1%</span></div>
   <div><small>Cheques con aval SGR</small><b>≈ 26%</b><span>La forma más barata de financiarse hoy</span></div>
   <div><small>Crédito bancario PyME</small><b>23% – 45%</b><span>Según banco, plazo y garantía</span></div>
 </div>
 <div class="rates2">
   <div class="panel">
     <h3>¿Cuánto paga tu plazo fijo?</h3>
-    <p class="hint">Tasa anual (TNA) a 30 días, clientes, al 29/10. La inflación de septiembre fue 1,9% mensual: con una TNA menor a 22,8% el plazo fijo pierde poder de compra.</p>
-    <ul class="pf-list">
-<li class="pf gana"><span class="pf-b">Reba / CMF</span><span class="pf-t">24,0%</span><span class="pf-m">2,0% por mes</span><span class="pf-p">Le gana a la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Provincia</span><span class="pf-t">21,0%</span><span class="pf-m">1,75% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Macro</span><span class="pf-t">21,0%</span><span class="pf-m">1,75% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Nación</span><span class="pf-t">19,25%</span><span class="pf-m">1,6% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">BBVA</span><span class="pf-t">19,0%</span><span class="pf-m">1,58% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Credicoop</span><span class="pf-t">18,5%</span><span class="pf-m">1,54% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Galicia</span><span class="pf-t">18,25%</span><span class="pf-m">1,52% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">ICBC</span><span class="pf-t">17,9%</span><span class="pf-m">1,49% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Santander</span><span class="pf-t">17,0%</span><span class="pf-m">1,42% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
-<li class="pf pierde"><span class="pf-b">Patagonia</span><span class="pf-t">16,0%</span><span class="pf-m">1,33% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+    <p class="hint">Intereses que cobrás por cada <b>$1.000.000</b> a 30 días. La línea negra marca <b>$ 19.000</b>: lo que se come la inflación de septiembre (1,9% mensual). Si la barra la pasa, le ganás a la inflación.</p>
+    <ul class="pf-list" style="--infl:76.0%">
+<li class="pf gana"><div class="pf-top"><span class="pf-b">Reba / CMF</span><span class="pf-g">$ 19.726</span></div><div class="pf-bar"><i style="width:78.9%"></i></div><div class="pf-bot"><span class="pf-t">TNA 24,0%</span><span class="pf-p">Le gana a la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Provincia</span><span class="pf-g">$ 17.260</span></div><div class="pf-bar"><i style="width:69.0%"></i></div><div class="pf-bot"><span class="pf-t">TNA 21,0%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Macro</span><span class="pf-g">$ 17.260</span></div><div class="pf-bar"><i style="width:69.0%"></i></div><div class="pf-bot"><span class="pf-t">TNA 21,0%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Nación</span><span class="pf-g">$ 15.822</span></div><div class="pf-bar"><i style="width:63.3%"></i></div><div class="pf-bot"><span class="pf-t">TNA 19,25%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">BBVA</span><span class="pf-g">$ 15.616</span></div><div class="pf-bar"><i style="width:62.5%"></i></div><div class="pf-bot"><span class="pf-t">TNA 19,0%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Credicoop</span><span class="pf-g">$ 15.205</span></div><div class="pf-bar"><i style="width:60.8%"></i></div><div class="pf-bot"><span class="pf-t">TNA 18,5%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Galicia</span><span class="pf-g">$ 15.000</span></div><div class="pf-bar"><i style="width:60.0%"></i></div><div class="pf-bot"><span class="pf-t">TNA 18,25%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">ICBC</span><span class="pf-g">$ 14.712</span></div><div class="pf-bar"><i style="width:58.8%"></i></div><div class="pf-bot"><span class="pf-t">TNA 17,9%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Santander</span><span class="pf-g">$ 13.973</span></div><div class="pf-bar"><i style="width:55.9%"></i></div><div class="pf-bot"><span class="pf-t">TNA 17,0%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
+<li class="pf pierde"><div class="pf-top"><span class="pf-b">Patagonia</span><span class="pf-g">$ 13.151</span></div><div class="pf-bar"><i style="width:52.6%"></i></div><div class="pf-bot"><span class="pf-t">TNA 16,0%</span><span class="pf-p">Pierde contra la inflación</span></div></li>
     </ul>
     <p class="refs2">Promedio del sistema (BCRA 15/10): <b>19,82%</b> · BADLAR bancos privados: <b>22,06%</b> · Plazo fijo en dólares: <b>1,25% – 1,80%</b></p>
   </div>
@@ -268,11 +273,10 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
     <p class="hint">Tasas anuales publicadas por cada entidad. La tasa final depende de la calificación de tu empresa, la garantía y la relación con el banco.</p>
     <div class="bcards">
 <div class="bc"><div class="bc-h"><h4>Banco Nación</h4><span class="bc-v">Ago. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="">23% – 33%</b></div><div><small>Capital de trabajo</small><b class="">30%</b></div></div><p>Con aval de SGR la tasa de cheques baja. Certificados de obra: TAMAR + 6.</p></div>
-<div class="bc"><div class="bc-h"><h4>BPN</h4><span class="bc-v">Mar. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="">28% – 36%</b></div></div><p>Líneas provinciales para petróleo, fruticultura y turismo. Línea para proveedores neuquinos: tasa aún sin publicar.</p></div>
-<div class="bc"><div class="bc-h"><h4>Santander</h4><span class="bc-v">May. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="">40%</b></div></div><p>Préstamo a sola firma a 12 meses. Costo total (CFT): 54,5%.</p></div>
-<div class="bc"><div class="bc-h"><h4>Banco Coinag</h4><span class="bc-v">Jun. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="na">Consultar</b></div></div><p>Cheques avalados, factura de crédito y pagarés. Capital de trabajo y bienes de capital con foco en Vaca Muerta.</p></div>
-<div class="bc"><div class="bc-h"><h4>Banco Provincia (referencia)</h4><span class="bc-v">Oct. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">—</b></div><div><small>Capital de trabajo</small><b class="">31,8% – 45%</b></div></div><p>Desde TAMAR + 8 a 180 días hasta tasa fija sin reciprocidad.</p></div>
-<div class="bc"><div class="bc-h"><h4>Mercado de capitales</h4><span class="bc-v">Sep./oct. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="">25,7% – 29,2%</b></div><div><small>Capital de trabajo</small><b class="na">—</b></div></div><p>Cheques en bolsa: con aval de SGR 25,7%; sin garantía 29,2% (septiembre).</p></div>
+<div class="bc"><div class="bc-h"><h4>BPN</h4><span class="bc-v">Mar. 2026</span></div><div class="bc-r"><div><small>Capital de trabajo</small><b class="">28% – 36%</b></div></div><p>Líneas provinciales para petróleo, fruticultura y turismo. Línea para proveedores neuquinos: tasa aún sin publicar.</p></div>
+<div class="bc"><div class="bc-h"><h4>Santander</h4><span class="bc-v">May. 2026</span></div><div class="bc-r"><div><small>Capital de trabajo</small><b class="">40%</b></div></div><p>Préstamo a sola firma a 12 meses. Costo total (CFT): 54,5%.</p></div>
+<div class="bc"><div class="bc-h"><h4>Banco Provincia (referencia)</h4><span class="bc-v">Oct. 2026</span></div><div class="bc-r"><div><small>Capital de trabajo</small><b class="">31,8% – 45%</b></div></div><p>Desde TAMAR + 8 a 180 días hasta tasa fija sin reciprocidad.</p></div>
+<div class="bc"><div class="bc-h"><h4>Mercado de capitales</h4><span class="bc-v">Sep./oct. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="">25,7% – 29,2%</b></div></div><p>Cheques en bolsa: con aval de SGR 25,7%; sin garantía 29,2% (septiembre).</p></div>
     </div>
     <p class="refs2">Galicia, BBVA, Macro, Patagonia, Credicoop e ICBC no publican tasas PyME: cotizan a cada cliente.</p>
   </div>
