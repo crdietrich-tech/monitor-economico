@@ -118,6 +118,36 @@ tr.ally td{background:var(--gold-soft)}
 tr.ally td.bank::after{content:"Aliado D&D";display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:2px}
 tr:last-child td{border-bottom:0}
 .tnote{font-size:12px;color:var(--muted);margin:10px 0 0}
+/* Tasas v2 */
+.sec-head.first{margin-top:28px}
+.rsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:6px 0 14px}
+.rsum>div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.rsum small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.rsum b{font-family:var(--f-num);font-size:26px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.rsum span{font-size:12.5px;color:var(--muted)}
+.rates2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px}
+@media (max-width:900px){.rates2{grid-template-columns:minmax(0,1fr)}}
+.pf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.pf{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"b t" "p m";gap:2px 10px;padding:9px 0 9px 10px;border-bottom:1px solid var(--line);border-left:3px solid var(--down)}
+.pf.gana{border-left-color:var(--up)}
+.pf:last-child{border-bottom:0}
+.pf-b{grid-area:b;font-weight:600;font-size:14.5px}
+.pf-t{grid-area:t;font-family:var(--f-num);font-size:20px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.pf-m{grid-area:m;font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.pf-p{grid-area:p;font-size:12px;font-weight:600;color:var(--down)}
+.pf.gana .pf-p{color:var(--up)}
+.refs2{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.6}
+.refs2 b{color:var(--ink);font-family:var(--f-num);font-weight:600}
+.bcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.bc{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.bc-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.bc h4{margin:0;font-family:var(--f-display);font-size:16px;font-weight:650}
+.bc-v{font-size:11px;color:var(--muted);white-space:nowrap}
+.bc-r{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bc-r small{display:block;font-size:11px;color:var(--muted);line-height:1.3}
+.bc-r b{font-family:var(--f-num);font-size:19px;font-weight:600;color:var(--flat);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bc-r b.na{font-family:var(--f-body);font-size:14px;font-weight:500;color:var(--muted);font-style:italic}
+.bc p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
 /* Noticias */
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 28px}
 article{min-width:0}
@@ -159,6 +189,21 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
 
 <div class="cols">
 <div class="main-col">
+<!-- REGIONAL -->
+<div class="sec-head first"><h2>PyMEs y economía regional · Neuquén y Río Negro</h2></div>
+<div class="news">
+  <article><span class="chip">Neuquén</span><h3>La Tarifa Neuquina se extiende a toda la provincia</h3><p>El descuento de 30% en la factura de luz residencial, que hoy alcanza a unos 96.000 usuarios del EPEN, se ampliaría a unos 250.000 a través de nueve municipios y cuatro cooperativas (entre ellos Neuquén capital, Cutral Co, Plottier, Zapala y San Martín de los Andes). Ya hay más de 34.000 solicitudes aprobadas, que verán el beneficio en las boletas de noviembre; en las cooperativas falta la aprobación de ordenanzas.</p><p class="src"><a href="https://www.lmneuquen.com/neuquen/rolando-figueroa-anuncio-que-extenderan-la-tarifa-neuquina-ciudades-toda-la-provincia-n1259280">LM Neuquén</a> · <a href="https://diarioneuquino.com.ar/figueroa-amplio-la-tarifa-neuquina-a-toda-la-provincia-tras-el-reclamo-de-quintriqueo-por-los-usuarios-excluidos/">Diario Neuquino</a></p></article>
+  <article><span class="chip">Empleo</span><h3>Neuquén y Río Negro, las únicas con más empleo que en 2023</h3><p>Con datos a julio, Neuquén suma 12.825 puestos privados registrados y Río Negro 3.898 respecto de noviembre de 2023, mientras el resto del país sigue por debajo. Weretilneck afirmó que Río Negro creció 2% en el último año, impulsado por las obras energéticas.</p><p class="src"><a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a> · <a href="https://rionegro.gov.ar/articulo/62482/weretilneck-destaco-el-impacto-energetico-y-confirmo-que-rio-negro-desdoblara-las-elecciones">Gobierno de Río Negro</a></p></article>
+</div>
+
+<!-- VACA MUERTA -->
+<div class="sec-head"><h2>Vaca Muerta y energía</h2></div>
+<div class="news">
+  <article><span class="chip">VMOS</span><h3>El oleoducto a Punta Colorada, al 85%</h3><p>La obra de US$3.000 millones (437 km desde Allen más 15 km submarinos hasta dos monoboyas) arrancará con 180.000 barriles diarios y podría escalar a 550.000. Hay diferencias en el calendario: Infobae informa primer petróleo el 31 de diciembre y exportación en el primer trimestre de 2027; La Nación cita ingreso de crudo en enero y primer despacho entre marzo y abril. El transporte ahorraría entre US$2 y US$4 por barril.</p><p class="src"><a href="https://www.infobae.com/economia/2026/10/29/vaca-muerta-un-puerto-que-exporto-hierro-y-estuvo-30-anos-abandonado-ahora-renace-como-la-gran-puerta-de-salida-del-petroleo-argentino/">Infobae</a> · <a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a></p></article>
+  <article><span class="chip">Proveedores</span><h3>VMOS ya compró US$300 millones a proveedores locales</h3><p>Según sus directivos, el proyecto pagó más de US$240 millones en salarios y US$300 millones en compras locales en un año y medio; entre 70% y 80% de los 1.600 trabajadores son rionegrinos. Weretilneck recordó que la ley provincial exige 80% de empleo y 60% de proveedores locales, y proyectó exportaciones por US$30.000 millones cuando operen VMOS y los dos proyectos de GNL. En Sierra Grande advierten falta de alojamiento.</p><p class="src"><a href="https://rionegro.gov.ar/articulo/62482/weretilneck-destaco-el-impacto-energetico-y-confirmo-que-rio-negro-desdoblara-las-elecciones">Gobierno de Río Negro</a> · <a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a></p></article>
+  <article><span class="chip risk">Gobierno</span><h3>Se formalizó la salida del secretario de Energía y Minería</h3><p>El Boletín Oficial de hoy acepta la renuncia de Daniel González Casartelli como secretario de Coordinación de Energía y Minería, a partir del 1 de noviembre. Es el funcionario que coordinaba la agenda del RIGI; todavía no se conoce su reemplazo.</p><p class="src"><a href="https://noticiasargentinas.com/economia/economia--una-designacion-y-una-renuncia_a6ae46a1145c3c55a7b562a3f">Noticias Argentinas</a></p></article>
+</div>
+
 <!-- TABLERO -->
 <div class="sec-head"><h2>Tablero de indicadores</h2><span class="tag">Cierre 29/10</span></div>
 <div class="legend"><span style="--c:var(--up)">Subió</span><span style="--c:var(--down)">Bajó</span><span style="--c:var(--flat)">Sin cambios o sin comparación</span></div>
@@ -195,51 +240,44 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
 
 <!-- TASAS -->
 <div class="sec-head"><h2>Tasas de interés</h2><span class="tag">TNA · octubre 2026</span></div>
-<div class="rates">
+<div class="rsum">
+  <div><small>Plazo fijo a 30 días</small><b>16% – 24%</b><span>Para no perder contra la inflación hace falta 22,8%</span></div>
+  <div><small>Cheques con aval SGR</small><b>≈ 26%</b><span>La forma más barata de financiarse hoy</span></div>
+  <div><small>Crédito bancario PyME</small><b>23% – 45%</b><span>Según banco, plazo y garantía</span></div>
+</div>
+<div class="rates2">
   <div class="panel">
-    <h3>Plazo fijo en pesos a 30 días</h3>
-    <p class="hint">Clientes, al 29/10 (sin cambios en la semana). Verde: paga arriba de la inflación; rojo: paga menos.</p>
-    <div class="bars">
-      <div class="bar hi"><span>Reba / CMF</span><div class="track"><div class="fill" style="width:96%"></div></div><b>24,0%</b></div>
-      <div class="bar lo"><span>Provincia</span><div class="track"><div class="fill" style="width:84%"></div></div><b>21,0%</b></div>
-      <div class="bar lo"><span>Macro</span><div class="track"><div class="fill" style="width:84%"></div></div><b>21,0%</b></div>
-      <div class="bar lo"><span>Nación</span><div class="track"><div class="fill" style="width:77%"></div></div><b>19,25%</b></div>
-      <div class="bar lo"><span>BBVA</span><div class="track"><div class="fill" style="width:76%"></div></div><b>19,0%</b></div>
-      <div class="bar lo"><span>Credicoop</span><div class="track"><div class="fill" style="width:74%"></div></div><b>18,5%</b></div>
-      <div class="bar lo"><span>Galicia</span><div class="track"><div class="fill" style="width:73%"></div></div><b>18,25%</b></div>
-      <div class="bar lo"><span>ICBC</span><div class="track"><div class="fill" style="width:71.6%"></div></div><b>17,9%</b></div>
-      <div class="bar lo"><span>Santander</span><div class="track"><div class="fill" style="width:68%"></div></div><b>17,0%</b></div>
-      <div class="bar lo"><span>Patagonia</span><div class="track"><div class="fill" style="width:64%"></div></div><b>16,0%</b></div>
-    </div>
-    <p class="infl-line">Umbral: una TNA de 22,8% rinde 1,9% mensual, igual que la inflación de septiembre (con el 1,8% que estiman los privados para octubre, el umbral bajaría a 21,6%). Escala de 0% a 25%.</p>
-    <div class="refs">
-      <div class="ref"><span>Promedio personas humanas (BCRA 15/10)</span><b>19,82%</b></div>
-      <div class="ref"><span>BADLAR privados (vigente 20/09)</span><b>22,06%</b></div>
-      <div class="ref"><span>Plazo fijo USD · Bancor</span><b>1,80%</b></div>
-      <div class="ref"><span>Plazo fijo USD · BNA</span><b>1,25%</b></div>
-    </div>
+    <h3>¿Cuánto paga tu plazo fijo?</h3>
+    <p class="hint">Tasa anual (TNA) a 30 días, clientes, al 29/10. La inflación de septiembre fue 1,9% mensual: con una TNA menor a 22,8% el plazo fijo pierde poder de compra.</p>
+    <ul class="pf-list">
+<li class="pf gana"><span class="pf-b">Reba / CMF</span><span class="pf-t">24,0%</span><span class="pf-m">2,0% por mes</span><span class="pf-p">Le gana a la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Provincia</span><span class="pf-t">21,0%</span><span class="pf-m">1,75% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Macro</span><span class="pf-t">21,0%</span><span class="pf-m">1,75% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Nación</span><span class="pf-t">19,25%</span><span class="pf-m">1,6% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">BBVA</span><span class="pf-t">19,0%</span><span class="pf-m">1,58% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Credicoop</span><span class="pf-t">18,5%</span><span class="pf-m">1,54% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Galicia</span><span class="pf-t">18,25%</span><span class="pf-m">1,52% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">ICBC</span><span class="pf-t">17,9%</span><span class="pf-m">1,49% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Santander</span><span class="pf-t">17,0%</span><span class="pf-m">1,42% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+<li class="pf pierde"><span class="pf-b">Patagonia</span><span class="pf-t">16,0%</span><span class="pf-m">1,33% por mes</span><span class="pf-p">Pierde contra la inflación</span></li>
+    </ul>
+    <p class="refs2">Promedio del sistema (BCRA 15/10): <b>19,82%</b> · BADLAR bancos privados: <b>22,06%</b> · Plazo fijo en dólares: <b>1,25% – 1,80%</b></p>
   </div>
-
   <div class="panel">
-    <h3>Financiamiento PyME · bancos con presencia en Neuquén</h3>
-    <p class="hint">Tasas publicadas por cada entidad. Las finales dependen de calificación, reciprocidad y garantía.</p>
-    <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Banco</th><th>Descuento de cheques</th><th>Capital de trabajo / cuenta corriente</th><th>Vigencia</th></tr></thead>
-      <tbody>
-        <tr><td class="bank">Banco Coinag</td><td><span class="nd">No publica tasa</span><span class="det">Cheques avalados, factura de crédito electrónica y pagarés bursátiles</span></td><td><span class="nd">Cotización a medida</span><span class="det">Capital de trabajo, bienes de capital y comex con foco en Vaca Muerta</span></td><td>Jun. 2026</td></tr>
-        <tr><td class="bank">BPN</td><td><span class="nd">Sin dato actualizado</span></td><td><span class="rate">28% – 36%</span><span class="det">Líneas provinciales para petróleo, fruticultura y turismo. Requiere reciprocidad. Nuevas líneas a tasa preferencial para proveedores neuquinos: sin tasa publicada aún</span></td><td>Mar. 2026</td></tr>
-        <tr><td class="bank">Banco Nación</td><td><span class="rate">23% – 33%</span><span class="det">PyMEs Mi Banco, de 6 a 360 días (con SGR). Resto: 25% – 36%; 32% con SGR</span></td><td><span class="rate">30%</span><span class="det">Adelanto en cuenta corriente con acuerdo (Mi Banco). Certificados de obra: TAMAR + 6</span></td><td>Ago. 2026</td></tr>
-        <tr><td class="bank">Santander</td><td><span class="nd">No publica tasa</span></td><td><span class="rate">40%</span><span class="det">Sola firma, 12 meses. CFT 54,52%</span></td><td>May. 2026</td></tr>
-        <tr><td class="bank">Galicia · BBVA · Macro · Patagonia · Credicoop · ICBC</td><td colspan="2"><span class="nd">No publican tasas PyME en su web. Se cotizan por cliente.</span></td><td>—</td></tr>
-        <tr><td class="bank">Referencia: Banco Provincia (BA)</td><td><span class="nd">—</span></td><td><span class="rate">31,8% – 45%</span><span class="det">TAMAR + 8 (180 días) hasta tasa fija sin reciprocidad</span></td><td>01/10/2026</td></tr>
-        <tr><td class="bank">Mercado de capitales</td><td><span class="rate">25,7% – 29,2%</span><span class="det">Índice de Financiamiento PyME (VetaCap), septiembre: cheques avalados 25,73%, sin garantía 29,23%, promedio 26,84%. El Cronista informó 27,76% para octubre</span></td><td><span class="nd">—</span></td><td>Sep./oct. 2026</td></tr>
-      </tbody>
-    </table>
+    <h3>¿Cuánto cuesta financiarse?</h3>
+    <p class="hint">Tasas anuales publicadas por cada entidad. La tasa final depende de la calificación de tu empresa, la garantía y la relación con el banco.</p>
+    <div class="bcards">
+<div class="bc"><div class="bc-h"><h4>Banco Nación</h4><span class="bc-v">Ago. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="">23% – 33%</b></div><div><small>Capital de trabajo</small><b class="">30%</b></div></div><p>Con aval de SGR la tasa de cheques baja. Certificados de obra: TAMAR + 6.</p></div>
+<div class="bc"><div class="bc-h"><h4>BPN</h4><span class="bc-v">Mar. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="">28% – 36%</b></div></div><p>Líneas provinciales para petróleo, fruticultura y turismo. Línea para proveedores neuquinos: tasa aún sin publicar.</p></div>
+<div class="bc"><div class="bc-h"><h4>Santander</h4><span class="bc-v">May. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="">40%</b></div></div><p>Préstamo a sola firma a 12 meses. Costo total (CFT): 54,5%.</p></div>
+<div class="bc"><div class="bc-h"><h4>Banco Coinag</h4><span class="bc-v">Jun. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">Consultar</b></div><div><small>Capital de trabajo</small><b class="na">Consultar</b></div></div><p>Cheques avalados, factura de crédito y pagarés. Capital de trabajo y bienes de capital con foco en Vaca Muerta.</p></div>
+<div class="bc"><div class="bc-h"><h4>Banco Provincia (referencia)</h4><span class="bc-v">Oct. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="na">—</b></div><div><small>Capital de trabajo</small><b class="">31,8% – 45%</b></div></div><p>Desde TAMAR + 8 a 180 días hasta tasa fija sin reciprocidad.</p></div>
+<div class="bc"><div class="bc-h"><h4>Mercado de capitales</h4><span class="bc-v">Sep./oct. 2026</span></div><div class="bc-r"><div><small>Descuento de cheques</small><b class="">25,7% – 29,2%</b></div><div><small>Capital de trabajo</small><b class="na">—</b></div></div><p>Cheques en bolsa: con aval de SGR 25,7%; sin garantía 29,2% (septiembre).</p></div>
     </div>
-    <p class="tnote">Revisado el 30/10: los bancos no publicaron nuevas tasas PyME y el BPN todavía no difundió las condiciones de su línea a tasa preferencial para proveedores neuquinos. Como referencia del costo del dinero en pesos, en la licitación del Tesoro la Lecap a febrero de 2027 cortó en 2,10% efectivo mensual y el instrumento con cobertura cambiaria se adjudicó a 7% anual. Fuentes: <a href="https://www.cronista.com/economia-politica/cuanto-cuesta-pedir-un-prestamo-en-el-banco-nacion-hoy-la-diferencia-entre-pymes-y-grandes-empresas/">El Cronista (BNA)</a>, <a href="https://www.mejorinformado.com/regionales/figueroa-koenig-dieron-detalles-creditos-bpn-pymes-tasas-28-plazos-amplios-respaldo-provincial_1772637378">Mejor Informado (BPN)</a>, <a href="https://www.ambito.com/energia/pymes-vaca-muerta-el-boom-energetico-abre-oportunidades-pero-crecen-los-pedidos-contratos-financiamiento-y-competitividad-n6338078">Ámbito (línea BPN proveedores)</a>, <a href="https://mundoempresarial.ar/prestamos-para-pymes-tasas/">Mundo Empresarial (Provincia, Santander)</a>, <a href="https://www.diariopopular.com.ar/economia/banco-coinag-presentara-lineas-creditos-especiales-financiar-maquinaria-agricola-capital-trabajo-y-bienes-capital-n903568">Diario Popular (Coinag)</a>, <a href="https://www.infobae.com/economia/2026/10/21/cuales-son-las-condiciones-que-enfrentan-las-pymes-para-financiarse-en-el-mercado-de-capitales/">Infobae (IFP septiembre)</a>, <a href="https://www.cronista.com/finanzas-mercados/financiamiento-pyme-la-estabilidad-de-las-tasas-vale-mas-que-una-baja-transitoria/">El Cronista (IFP)</a>, <a href="https://www.eldestapeweb.com/economia/plazo-fijo-cual-banco-interes-paga-ultima-semana-octubre-2026-2026102693527">El Destape (plazo fijo, datos BCRA)</a>, <a href="https://perspectivas.cohen.com.ar/articulos/updatesdiarios-local-rollover-holgado-y-mas-plazo-en-otra-rueda-sin-compras">Cohen (licitación)</a>.</p>
+    <p class="refs2">Galicia, BBVA, Macro, Patagonia, Credicoop e ICBC no publican tasas PyME: cotizan a cada cliente.</p>
   </div>
 </div>
+<p class="tnote">Fuentes: <a href="https://www.cronista.com/economia-politica/cuanto-cuesta-pedir-un-prestamo-en-el-banco-nacion-hoy-la-diferencia-entre-pymes-y-grandes-empresas/">El Cronista (BNA)</a>, <a href="https://www.mejorinformado.com/regionales/figueroa-koenig-dieron-detalles-creditos-bpn-pymes-tasas-28-plazos-amplios-respaldo-provincial_1772637378">Mejor Informado (BPN)</a>, <a href="https://www.ambito.com/energia/pymes-vaca-muerta-el-boom-energetico-abre-oportunidades-pero-crecen-los-pedidos-contratos-financiamiento-y-competitividad-n6338078">Ámbito (línea BPN proveedores)</a>, <a href="https://mundoempresarial.ar/prestamos-para-pymes-tasas/">Mundo Empresarial (Provincia, Santander)</a>, <a href="https://www.diariopopular.com.ar/economia/banco-coinag-presentara-lineas-creditos-especiales-financiar-maquinaria-agricola-capital-trabajo-y-bienes-capital-n903568">Diario Popular (Coinag)</a>, <a href="https://www.infobae.com/economia/2026/10/21/cuales-son-las-condiciones-que-enfrentan-las-pymes-para-financiarse-en-el-mercado-de-capitales/">Infobae (IFP septiembre)</a>, <a href="https://www.cronista.com/finanzas-mercados/financiamiento-pyme-la-estabilidad-de-las-tasas-vale-mas-que-una-baja-transitoria/">El Cronista (IFP)</a>, <a href="https://www.eldestapeweb.com/economia/plazo-fijo-cual-banco-interes-paga-ultima-semana-octubre-2026-2026102693527">El Destape (plazo fijo, datos BCRA)</a>, <a href="https://perspectivas.cohen.com.ar/articulos/updatesdiarios-local-rollover-holgado-y-mas-plazo-en-otra-rueda-sin-compras">Cohen (licitación)</a>.</p>
 
 <div class="mirada" lang="es"><div class="mh"><span class="mt">Mirada D&amp;D · opinión y recomendación general</span><span class="md">Opinión de carácter general. No es asesoramiento ni recomendación de inversión o de acción.</span></div><p>Los especialistas destacan que la curva en pesos se mantuvo estable después de la licitación, con letras cortas que rinden cerca de 2,1% mensual, por encima de la inflación esperada, mientras los plazos fijos de los grandes bancos siguen pagando menos que la inflación. En el mercado de capitales, el costo del financiamiento PyME subió por tercer mes consecutivo, aunque la diferencia entre cheques con y sin garantía está en su menor nivel en años y los bancos siguen prestando con cautela. Para una PyME, la garantía y el plazo siguen pesando tanto como la tasa.</p><p style="margin-top:6px"><strong>Recomendación general:</strong> para colocar excedentes, suele ser prudente comparar el rendimiento contra la inflación esperada y no inmovilizar fondos que se van a necesitar para el aguinaldo y los pagos de diciembre. Para financiarse, conviene cerrar con anticipación las necesidades de fin de año, comparar el costo financiero total con la garantía incluida y elegir plazos que coincidan con el ciclo de cobro.</p></div>
 
@@ -251,21 +289,6 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
   <article><span class="chip">Mercados</span><h3>Riesgo país en 741: la mayor baja en tres semanas</h3><p>Los bonos en dólares subieron hasta 1,5% (Global 2035) y el riesgo país cayó 2,9%, a su menor nivel desde el balotaje brasileño. Las acciones fueron en sentido contrario: el Merval perdió 0,7% y encadenó su cuarta baja, con YPF entre las más castigadas. Al mediodía algunos medios informaban 749 puntos; el cierre de 741 surge de Noticias Argentinas.</p><p class="src"><a href="https://noticiasargentinas.com/economia/el-riesgo-pais-bajo-casi-3--a-la-zona-de-los-740-puntos_a6ae3b00f83a79a91f39238d0">Noticias Argentinas</a> · <a href="https://www.baenegocios.com/finanzas/el-riesgo-cae-al-menor-nivel-desde-las-elecciones-brasilenas-y-el-merval-suma-cuatro-bajas-seguidas/">BAE Negocios</a> · <a href="https://www.perfil.com/economia/los-bonos-argentinos-suben-en-wall-street-pero-el-riesgo-pais-se-mantiene-cerca-de-los-750-puntos-aLjYp2f1FK4n">Perfil</a></p></article>
   <article><span class="chip">Dólar</span><h3>El mayorista frenó, pero va por su tercera suba semanal</h3><p>Bajó $3, a $1.539, después del récord nominal del miércoles, y queda 26,7% debajo del techo de la banda ($1.949,9). Los financieros también cedieron (MEP $1.566, CCL $1.657) y el blue se mantuvo en $1.565. Los cierres difieren levemente entre medios: iProfesional informó MEP de $1.565,4 y CCL de $1.653,8.</p><p class="src"><a href="https://www.ambito.com/finanzas/dolar-blue-hoy-cuanto-cerro-este-jueves-29-octubre-n6339455">Ámbito</a> · <a href="https://www.iprofesional.com/economia/467842-el-bcra-volvio-a-comprar-dolares-de-tres-dias-sin-intervenir-en-el-mercado">iProfesional</a></p></article>
   <article><span class="chip risk">Actividad</span><h3>Se acerca la recesión técnica</h3><p>Tras la caída de 0,6% del PBI en el segundo trimestre, consultoras privadas estiman otra contracción en el tercero; la minería y la energía mejoran, pero no compensan el retroceso del agro y la industria. El empleo privado registrado tiene 265.765 puestos menos que en noviembre de 2023, con la construcción (−14,5%) y la industria (−7,6%) como los sectores más golpeados.</p><p class="src"><a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a> · <a href="https://www.pagina12.com.ar/2026/10/30/dos-trimestres-seguidos-en-caida/">Página|12</a></p></article>
-</div>
-
-<!-- VACA MUERTA -->
-<div class="sec-head"><h2>Vaca Muerta y energía</h2></div>
-<div class="news">
-  <article><span class="chip">VMOS</span><h3>El oleoducto a Punta Colorada, al 85%</h3><p>La obra de US$3.000 millones (437 km desde Allen más 15 km submarinos hasta dos monoboyas) arrancará con 180.000 barriles diarios y podría escalar a 550.000. Hay diferencias en el calendario: Infobae informa primer petróleo el 31 de diciembre y exportación en el primer trimestre de 2027; La Nación cita ingreso de crudo en enero y primer despacho entre marzo y abril. El transporte ahorraría entre US$2 y US$4 por barril.</p><p class="src"><a href="https://www.infobae.com/economia/2026/10/29/vaca-muerta-un-puerto-que-exporto-hierro-y-estuvo-30-anos-abandonado-ahora-renace-como-la-gran-puerta-de-salida-del-petroleo-argentino/">Infobae</a> · <a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a></p></article>
-  <article><span class="chip">Proveedores</span><h3>VMOS ya compró US$300 millones a proveedores locales</h3><p>Según sus directivos, el proyecto pagó más de US$240 millones en salarios y US$300 millones en compras locales en un año y medio; entre 70% y 80% de los 1.600 trabajadores son rionegrinos. Weretilneck recordó que la ley provincial exige 80% de empleo y 60% de proveedores locales, y proyectó exportaciones por US$30.000 millones cuando operen VMOS y los dos proyectos de GNL. En Sierra Grande advierten falta de alojamiento.</p><p class="src"><a href="https://rionegro.gov.ar/articulo/62482/weretilneck-destaco-el-impacto-energetico-y-confirmo-que-rio-negro-desdoblara-las-elecciones">Gobierno de Río Negro</a> · <a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a></p></article>
-  <article><span class="chip risk">Gobierno</span><h3>Se formalizó la salida del secretario de Energía y Minería</h3><p>El Boletín Oficial de hoy acepta la renuncia de Daniel González Casartelli como secretario de Coordinación de Energía y Minería, a partir del 1 de noviembre. Es el funcionario que coordinaba la agenda del RIGI; todavía no se conoce su reemplazo.</p><p class="src"><a href="https://noticiasargentinas.com/economia/economia--una-designacion-y-una-renuncia_a6ae46a1145c3c55a7b562a3f">Noticias Argentinas</a></p></article>
-</div>
-
-<!-- REGIONAL -->
-<div class="sec-head"><h2>Economía regional · Neuquén y Río Negro</h2></div>
-<div class="news">
-  <article><span class="chip">Neuquén</span><h3>La Tarifa Neuquina se extiende a toda la provincia</h3><p>El descuento de 30% en la factura de luz residencial, que hoy alcanza a unos 96.000 usuarios del EPEN, se ampliaría a unos 250.000 a través de nueve municipios y cuatro cooperativas (entre ellos Neuquén capital, Cutral Co, Plottier, Zapala y San Martín de los Andes). Ya hay más de 34.000 solicitudes aprobadas, que verán el beneficio en las boletas de noviembre; en las cooperativas falta la aprobación de ordenanzas.</p><p class="src"><a href="https://www.lmneuquen.com/neuquen/rolando-figueroa-anuncio-que-extenderan-la-tarifa-neuquina-ciudades-toda-la-provincia-n1259280">LM Neuquén</a> · <a href="https://diarioneuquino.com.ar/figueroa-amplio-la-tarifa-neuquina-a-toda-la-provincia-tras-el-reclamo-de-quintriqueo-por-los-usuarios-excluidos/">Diario Neuquino</a></p></article>
-  <article><span class="chip">Empleo</span><h3>Neuquén y Río Negro, las únicas con más empleo que en 2023</h3><p>Con datos a julio, Neuquén suma 12.825 puestos privados registrados y Río Negro 3.898 respecto de noviembre de 2023, mientras el resto del país sigue por debajo. Weretilneck afirmó que Río Negro creció 2% en el último año, impulsado por las obras energéticas.</p><p class="src"><a href="https://agendarweb.com.ar/2026/10/30/vaca-muerta-empuja-la-economia-pero-no-alcanza-a-compensar-la-perdida-de-empleos/">AgendAR / La Nación</a> · <a href="https://rionegro.gov.ar/articulo/62482/weretilneck-destaco-el-impacto-energetico-y-confirmo-que-rio-negro-desdoblara-las-elecciones">Gobierno de Río Negro</a></p></article>
 </div>
 
 <!-- EVENTOS -->
