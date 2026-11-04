@@ -369,6 +369,23 @@ tr:last-child td{border-bottom:0}
 @media (min-width:900px){.secnav .chips{flex-wrap:wrap;overflow:visible}}
 @media (max-width:640px){.secnav-lbl{display:none}}
 /* fin navegador */
+/* Archivo de columnas */
+.persp-arch{margin-top:22px;padding-top:14px;border-top:3px solid var(--navy)}
+.persp-arch h3{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin:0 0 8px;font-family:var(--f-body)}
+.pa-vacio{font-size:13px;color:var(--muted);margin:0;font-style:italic}
+.persp-arch details{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:10px 0;margin:0}
+.persp-arch summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:2px}
+.persp-arch summary::-webkit-details-marker{display:none}
+.pa-fecha{font-size:11.5px;color:var(--muted);font-weight:500}
+.pa-tit{font-family:var(--f-display);font-size:16px;font-weight:650;color:var(--navy);line-height:1.3}
+.pa-tit::after{content:" ›";color:var(--gold)}
+.persp-arch details[open] .pa-tit::after{content:" ⌄"}
+.pa-body{margin-top:10px}
+.pa-body p,.pa-body li{font-size:14.5px;line-height:1.55}
+.pa-body p{margin:0 0 10px;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.pa-body ol{padding-left:20px;margin:0 0 10px}
+.persp .ver-ant{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;color:var(--gold);text-decoration:none}
+/* fin archivo columnas */
 /* Noticias */
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 28px}
 article{min-width:0}
@@ -647,8 +664,13 @@ document.addEventListener('DOMContentLoaded',function(){
   <p>La buena noticia es que esos tres puntos se pueden trabajar. Una empresa que ordena su información, delega la gestión y diversifica su cartera vale más, aunque nunca piense en venderse.</p>
   <p>Y cuando la decisión es vender, la valuación es el punto de partida, no el final. Después viene preparar la empresa, encontrar al comprador adecuado con la debida confidencialidad y acompañar la negociación hasta el cierre. Hacerlo con tiempo y con método marca la diferencia entre vender bien y vender apurado.</p>
   <p>Saber cuánto vale tu empresa es, en definitiva, saber cuánto vale tu trabajo de todos estos años.</p>
+  <a class="ver-ant" href="#columnas-anteriores">Leer columnas anteriores ↓</a>
   <p class="md">Opinión del autor, de carácter general. No constituye asesoramiento ni recomendación de inversión o de acción. Ver aviso legal al pie.</p>
 </section>
+<div class="persp-arch" id="columnas-anteriores">
+  <h3>Columnas anteriores</h3>
+  <p class="pa-vacio">Cada semana, la columna anterior se guarda acá para que puedas volver a leerla.</p>
+</div>
 </aside>
 </div>
 
