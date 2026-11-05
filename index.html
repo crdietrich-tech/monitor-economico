@@ -184,6 +184,8 @@ tr:last-child td{border-bottom:0}
 .wa-tx strong{color:var(--ink)}
 .wa-bt{background:#25D366;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:8px 16px;border-radius:999px;white-space:nowrap}
 .wa-bt:hover{filter:brightness(.95)}
+.wa-share{background:var(--surface);color:#128C4A;border:1.5px solid #25D366}
+
 /* Navegador de secciones */
 .sn-btn{position:fixed;top:14px;right:max(14px,env(safe-area-inset-right,0px));z-index:40;display:flex;align-items:center;gap:8px;font:600 14px var(--f-body);color:#2B2A27;background:var(--olive);border:0;border-radius:999px;padding:10px 16px 10px 14px;box-shadow:0 4px 14px rgba(60,50,20,.22);cursor:pointer}
 .sn-btn:hover{filter:brightness(1.04)}
@@ -266,8 +268,18 @@ footer{margin-top:40px;font-size:12px;color:var(--muted);border-top:1px solid va
 
 <p class="headline">El gobernador Rolando Figueroa anunció un paquete fiscal para 2027 que premia a las pymes neuquinas que estén al día: un crédito fiscal de hasta 20% para usar contra impuestos provinciales, rebaja de Ingresos Brutos con la mayoría de las actividades en 2%, 25% de descuento en el Inmobiliario, un plan de hasta 36 cuotas con condonación de intereses y multas y la suspensión de embargos provinciales hasta el 30 de junio de 2027, una propuesta que la federación de cámaras del sector energético, con más de 600 empresas de Vaca Muerta, salió a respaldar. Para una PyME de la región la clave es llegar al cierre de 2026 sin deudas provinciales para acceder al crédito fiscal, en un día en que el riesgo país saltó a 925 puntos y confirmó que el financiamiento seguirá caro por un tiempo.</p>
 <p class="note">Indicadores al cierre del jueves 5/11, con variaciones contra el miércoles 4/11. Por el Día del Bancario (viernes 6) y los feriados del lunes 9 y martes 10 por la visita del papa León XIV, la próxima rueda cambiaria será el miércoles 11/11. Diferencias entre medios: el blue cerró en $1.555 según la nota de cierre de Ámbito y en $1.550 en su resumen de cotizaciones; el MEP, en $1.579,5 (Ámbito) o $1.580,8 (Diario Neuquino), y el contado con liquidación, en $1.671,4 o $1.665,2. Diario Neuquino informa el BNA en $1.470, un valor que no coincide con el resto de las fuentes ($1.570). El tablero usa los valores de Ámbito; la variación del mayorista se calcula contra $1.546, el cierre previo que informa Ámbito (la edición de la mañana mostraba $1.547,5).</p>
-<div class="wa-canal" id="canal-whatsapp"><span class="wa-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></span><span class="wa-tx"><strong>Recibí el Radar Pyme todas las mañanas en WhatsApp.</strong> Sumate gratis al canal: sin grupos y sin que nadie vea tu número.</span><a class="wa-bt" href="https://whatsapp.com/channel/0029Vb8xRrL1Hsq52swkN31y" target="_blank" rel="noopener">Seguir el canal</a></div>
+<div class="wa-canal" id="canal-whatsapp"><span class="wa-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></span><span class="wa-tx"><strong>Recibí el Radar Pyme todas las mañanas en WhatsApp.</strong> Sumate gratis al canal: sin grupos y sin que nadie vea tu número.</span><a class="wa-bt" href="https://whatsapp.com/channel/0029Vb8xRrL1Hsq52swkN31y" target="_blank" rel="noopener">Seguir el canal</a><a class="wa-bt wa-share" id="wa-share" href="https://wa.me/?text=Te%20comparto%20Radar%20Pyme%20de%20D%26D%20Group%3A%20la%20econom%C3%ADa%20del%20d%C3%ADa%20para%20las%20PyMEs%20de%20Neuqu%C3%A9n%20y%20Vaca%20Muerta%20%28d%C3%B3lar%2C%20tasas%2C%20inflaci%C3%B3n%20y%20novedades%29.%20Es%20gratis%20%F0%9F%91%89%20https%3A//monitor.dydgroupconsultores.com/%3Futm_source%3Dwa_share" target="_blank" rel="noopener">Compartir por WhatsApp</a></div>
 
+<!-- COMPARTIR WA -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var a=document.getElementById('wa-share'); if(!a) return;
+  var m=document.querySelector('.main-col h3'), t=m?m.textContent.trim():'';
+  var txt='Te comparto Radar Pyme de D&D Group: la economía del día para las PyMEs de Neuquén y Vaca Muerta.'+(t?'\nHoy: '+t:'')+'\n👉 https://monitor.dydgroupconsultores.com/?utm_source=wa_share';
+  a.href='https://wa.me/?text='+encodeURIComponent(txt);
+});
+</script>
+<!-- FIN COMPARTIR WA -->
 <!-- APP RADAR PYME -->
 <div class="app-bar" id="app-bar" hidden>
   <img src="/icon-192.png" alt="" width="40" height="40">
