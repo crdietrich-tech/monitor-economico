@@ -1,5 +1,5 @@
 // Radar Pyme · service worker: siempre intenta traer la edición del día; sin señal muestra la última guardada.
-const CACHE = 'radar-pyme-v1';
+const CACHE = 'radar-pyme-v2';
 const BASE = ['/', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(BASE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
