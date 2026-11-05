@@ -1,0 +1,45 @@
+name: Aviso de nueva edición (Radar Pyme)
+# Cuando se publica la edición del día, manda una notificación a quienes activaron los avisos en la app.
+on:
+  push:
+    branches: [main]
+    paths: [index.html]
+  workflow_dispatch:
+jobs:
+  aviso:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 30 }
+      - name: Enviar aviso (una vez por edición)
+        env:
+          APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
+          API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          FORZAR: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ -z "$APP_ID" ] || [ -z "$API_KEY" ]; then echo "Faltan las claves de OneSignal; no se envía."; exit 0; fi
+          MSG="$(git log -1 --pretty=%s)"
+          FECHA="$(echo "$MSG" | grep -oE '[0-9]{2}/[0-9]{2}/[0-9]{4}' | head -1)"
+          if [ "$FORZAR" != "true" ]; then
+            [ -z "$FECHA" ] && { echo "No es una publicación de edición; no se envía."; exit 0; }
+            PREVIAS=$(git log --skip=1 -30 --pretty=%s | grep -c "$FECHA" || true)
+            [ "$PREVIAS" -gt 0 ] && { echo "La edición $FECHA ya fue avisada."; exit 0; }
+          fi
+          TITULAR="$(python3 - <<'PY'
+          import re,html
+          s=open('index.html',encoding='utf-8').read()
+          i=s.find('class="main-col"'); m=re.search(r'<h3[^>]*>(.*?)</h3>',s[i:] if i>0 else s,re.S)
+          t=html.unescape(re.sub(r'<[^>]+>','',m.group(1))).strip() if m else ''
+          print(t[:140] or 'Ya está disponible la edición de hoy.')
+          PY
+          )"
+          DIA="${FECHA:0:5}"
+          jq -n --arg app "$APP_ID" --arg t "Radar Pyme${DIA:+ · $DIA}" --arg b "$TITULAR" \
+            '{app_id:$app, target_channel:"push", included_segments:["Total Subscriptions"],
+              headings:{es:$t,en:$t}, contents:{es:$b,en:$b},
+              url:"https://monitor.dydgroupconsultores.com/?app=1&utm_source=push",
+              chrome_web_icon:"https://monitor.dydgroupconsultores.com/icon-192.png",
+              web_push_topic:"edicion-diaria"}' > aviso.json
+          cat aviso.json
+          curl -sS --fail-with-body -X POST https://api.onesignal.com/notifications \
+            -H "Authorization: Key $API_KEY" -H "Content-Type: application/json" -d @aviso.json
